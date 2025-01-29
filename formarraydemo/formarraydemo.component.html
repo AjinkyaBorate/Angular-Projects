@@ -1,0 +1,16 @@
+<p>Form Array Demo</p>
+
+<div>
+    <form [formGroup]="myform">
+        <div formArrayName="contactlist">
+            <div *ngFor="let c of contactlist.controls;let i=index">
+               
+                <input type="text" name="contact" [formControlName]="i">
+                 <button (click)="removeContact(i)">remove</button>
+            </div>
+            <button (click)="addNewContact()" >add new contact</button>
+        </div>
+        
+    </form>
+    
+</div>
